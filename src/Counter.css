@@ -5,57 +5,75 @@
     justify-content: center;
     height: 100vh;
     padding: 20px;
-  }
-  
-  .counter-text {
-    font-size: 24px;
+}
+
+.counter-text {
+    font-size: 26px;
     margin-bottom: 20px;
-  }
-  
-  .counter-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    margin: 10px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.counter-button {
+    padding: 20px 35px;
+    font-size: 20px;
+    margin: 15px;
     width: 100%;
     max-width: 250px;
     cursor: pointer;
     border: 1px solid #ccc;
     background-color: #f7f7f7;
-    transition: background-color 0.3s ease;
-  
-    /* You can adjust this for a different hover effect */
-  }
-  
-  .counter-button:hover {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.counter-button:hover {
     background-color: #e0e0e0;
-  }
-  
-  .saves-section {
+}
+
+.counter-button:active {
+    transform: scale(0.95);
+}
+
+.saves-section {
     margin-top: 20px;
     width: 100%;
     max-width: 300px;
-  }
-  
-  .saves-section h2 {
+}
+
+.saves-section h2 {
     font-size: 20px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
-  }
-  
-  .saves-section ul {
+}
+
+.saves-section ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .saves-section li {
+}
+
+.saves-section li {
     padding: 5px 0;
     border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .increment-button {
-    height: calc(2 * (15px + 30px));  /* double the height of the original button */
-  }
-  
-  input {
-    margin-top: 10px;  /* added margin for spacing */
-  }
+}
+
+.increment-button {
+    height: calc(2 * (20px + 35px));
+}
+
+input {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 250px;
+}
+
+/* Landscape mode adjustments */
+@media screen and (orientation: landscape) {
+    .counter-container {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
