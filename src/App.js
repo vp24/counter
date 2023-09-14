@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import './Counter.css';
 
-function App() {
+const Counter = () => {
+  const [counter, setCounter] = useState(0);
+  const [fileName, setFileName] = useState('');
+  const [saves, setSaves] = useState([]);
+
+  useEffect(() => {
+    // Load previous saves from localStorage if any
+    const savedCounts = localStorage.getItem('saves');
+    if (savedCounts) {
+      setSaves(JSON.parse(savedCounts));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save the saves state to localStorage
+    localStorage.setItem('saves', JSON.stringify(saves));
+  }, [saves]);
+
+  const incrementCounter = () => setCounter(counter + 1);
+  const decrementCounter = () => setCounter(counter - 1);
+  const resetCounter = () => setCounter(0);
+
+  const saveCount = () => {
+    if (fileName.trim() === '') {
+      alert('Please provide a name for the save.');
+      return;
+    }
+    const newSave = { name: fileName, count: counter };
+    setSaves([...saves, newSave]);
+    setFileName('');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="counter-container">
+      <p className="counter-text">Counter: {counter}</p>
+      <input 
+        type="text" 
+        value={fileName} 
+        onChange={(e) => setFileName(e.target.value)} 
+        placeholder="Save name"
+      />
+      <button className="counter-button" onClick={incrementCounter}>Increment</button>
+      <button className="counter-button" onClick={decrementCounter}>Decrement</button>
+      <button className="counter-button" onClick={resetCounter}>Reset</button>
+      <button className="counter-button" onClick={saveCount}>Save</button>
+      
+      <div className="saves-section">
+        <h2>Saves</h2>
+        <ul>
+          {saves.map((save, index) => (
+            <li key={index}>
+              {save.name}: {save.count}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Counter;

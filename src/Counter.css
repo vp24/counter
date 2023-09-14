@@ -1,0 +1,54 @@
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .counter-text {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .counter-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    width: 100%;
+    max-width: 250px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    transition: background-color 0.3s ease;
+  
+    /* You can adjust this for a different hover effect */
+  }
+  
+  .counter-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .saves-section {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .saves-section h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .saves-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .saves-section li {
+    padding: 5px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
