@@ -36,16 +36,16 @@ const Counter = () => {
   return (
     <div className="counter-container">
       <p className="counter-text">Counter: {counter}</p>
+      <button className="counter-button increment-button" onClick={incrementCounter}>Increment</button>
+      <button className="counter-button" onClick={decrementCounter}>Decrement</button>
+      <button className="counter-button" onClick={resetCounter}>Reset</button>
+      <button className="counter-button" onClick={saveCount}>Save</button>
       <input 
         type="text" 
         value={fileName} 
         onChange={(e) => setFileName(e.target.value)} 
         placeholder="Save name"
       />
-      <button className="counter-button" onClick={incrementCounter}>Increment</button>
-      <button className="counter-button" onClick={decrementCounter}>Decrement</button>
-      <button className="counter-button" onClick={resetCounter}>Reset</button>
-      <button className="counter-button" onClick={saveCount}>Save</button>
       
       <div className="saves-section">
         <h2>Saves</h2>

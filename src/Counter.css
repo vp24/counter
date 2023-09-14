@@ -52,3 +52,10 @@
     border-bottom: 1px solid #e0e0e0;
   }
   
+  .increment-button {
+    height: calc(2 * (15px + 30px));  /* double the height of the original button */
+  }
+  
+  input {
+    margin-top: 10px;  /* added margin for spacing */
+  }
