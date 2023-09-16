@@ -36,8 +36,8 @@ const Counter = () => {
   return (
     <div className="counter-container">
       <p className="counter-text">Counter: {counter}</p>
-      <button className="counter-button increment-button" onClick={incrementCounter}>Increment</button>
-      <button className="counter-button" onClick={decrementCounter}>Decrement</button>
+      <button className="counter-button increment-button" onClick={incrementCounter}>+</button>
+      <button className="counter-button" onClick={decrementCounter}>-</button>
       <button className="counter-button" onClick={resetCounter}>Reset</button>
       <button className="counter-button" onClick={saveCount}>Save</button>
       <input 

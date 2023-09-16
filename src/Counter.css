@@ -28,9 +28,19 @@
     background-color: #e0e0e0;
   }
   
-  .increment-button {
-    height: calc(2 * (15px + 30px));  /* double the height of the original button */
+
+.increment-button {
+    height: calc(2 * (15px + 60px)); /* Making the button taller */
+    font-size: 32px; /* Making the '+' sign bigger for clarity */
+    margin-bottom: 20px; /* Adding some spacing below the button to avoid accidental taps on other elements */
   }
+  
+  /* Add a subtle active state for feedback on press */
+  .counter-button:active {
+    background-color: #d0d0d0;
+    transform: scale(0.97); /* Slightly scaling the button down */
+  }
+  
   
   input {
     padding: 10px;
